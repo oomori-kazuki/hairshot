@@ -1,0 +1,16 @@
+<% if users.any? %>
+  <ul class="list-unstyled">
+    <% users.each do |user| %>
+      <li class="media">
+        <img class="mr-2 rounded" src="<%= gravatar_url(user, { size: 50}) %>" alt="アバター">
+        <div class="media-body">
+          <div>
+            <%= link_to user.name, user_path(user) %>
+          </div>
+          <!--フォローボタン入れる-->
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate users %>
+<% end %>
