@@ -1,0 +1,30 @@
+  <div class="new_post mr-4 d-flex flex-row justify-content-end">
+    <%= link_to new_post_path do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+  </div>
+  
+  <div class="setting">
+    <%= link_to "プロフィール編集", edit_user_path(user), class: "btn btn-primary btn-sm" %>
+
+
+<div class="header_links d-flex flex-row">
+  <div class="user_link">
+    <ul class="d-flex flex-row justify-content-end list-unstyled">
+      <li class="mr-2 btn btn-primary">Follower</li>
+      <li class="mr-2 btn btn-primary">Followings</li>
+      <li class="mr-2 btn btn-primary">Favorites</li>
+    </ul>
+  </div>
+  
+  <div class="post_link">
+    <ul class="nav nav-tabs category_link">
+      <li class="category nav-item"><a href="" class="nav-link active">All categories</a></li>
+      <li class="category nav-item"><a href="" class="nav-link">Men's perm</a></li>
+      <li class="category nav-item"><a href="" class="nav-link">Men's color</a></li>
+      <li class="category nav-item"><a href="" class="nav-link">Ladies' perm</a></li>
+      <li class="category nav-item"><a href="" class="nav-link">Ladies' color</a></li>
+    </ul>
+  </div>
+</div>
+

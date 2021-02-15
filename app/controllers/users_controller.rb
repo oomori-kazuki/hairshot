@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.order(id: :desc).page(params[:page])
   end
 
   def new
@@ -49,9 +50,29 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
   
+  def mensperms
+    @user = User.find(params[:id])
+    @posts = @user.posts.where(category_id: 1)
+  end
+  
+  def menscolors
+    @user = User.find(params[:id])
+    @posts = @user.posts.where(category_id: 2)
+  end
+  
+  def ladiesperms
+    @user = User.find(params[:id])
+    @posts = @user.posts.where(category_id: 3)
+  end
+  
+  def ladiescolors
+    @user = User.find(params[:id])
+    @posts = @user.posts.where(category_id: 4)
+  end
+  
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile, :image)
   end
 end

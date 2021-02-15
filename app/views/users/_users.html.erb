@@ -1,11 +1,21 @@
+<div class="mb-4">
+  <h1>Users</h1>
+</div>
+
 <% if users.any? %>
-  <ul class="list-unstyled">
+  <ul class="list-unstyled ">
     <% users.each do |user| %>
-      <li class="media">
-        <img class="mr-2 rounded" src="<%= gravatar_url(user, { size: 50}) %>" alt="アバター">
-        <div class="media-body">
+      <li class="border">
+        <div class="d-sm-inline-block">
+          <% if user.image? %>
+            <%= image_tag user.image.thumb.url, class: "ml-2 mr-2 rounded" %>
+          <% else %>
+            <img class="ml-2 mr-2 rounded" src="/assets/thumb_default.png" alt="デフォルトイメージ">
+          <% end %>
+        </div>
+        <div class="d-sm-inline-block">
           <div>
-            <%= link_to user.name, user_path(user) %>
+            <P><%= link_to user.name, user_path(user) %></P>
           </div>
           <!--フォローボタン入れる-->
         </div>
