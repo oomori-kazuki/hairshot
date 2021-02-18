@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root to: 'toppages#index'
   
+  get "general/login", to: 'general_sessions#new'
+  post "general/login", to: 'general_sessions#create'
+  delete "general/logout", to: 'general_sessions#destroy'
+  
   get "general_user_signup", to: "general_users#new"
   resources :general_users, only: [:show, :create, :edit, :update, :destroy]
   

@@ -1,5 +1,6 @@
 class GeneralUsersController < ApplicationController
   def show
+    @general_user = GeneralUser.find(params[:id])
   end
 
   def new
@@ -35,12 +36,16 @@ class GeneralUsersController < ApplicationController
   end
 
   def destroy
+    @general_user = GeneralUser.find(params[:id])
+    @general_user.destroy
+    
+    flash[:success] = "アカウントが削除されました"
   end
   
   private
   
   def user_params
-    params.require(:GeneralUser).permit(:name, :email, :password, :password_confirmation)
+    params.require(:general_user).permit(:name, :email, :password, :password_confirmation)
   end
   
 end
