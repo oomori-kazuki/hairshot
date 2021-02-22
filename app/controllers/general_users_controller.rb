@@ -1,6 +1,9 @@
 class GeneralUsersController < ApplicationController
+   before_action :require_user_logged_in, only: [:show, :edit, :followings]
+  
   def show
     @general_user = GeneralUser.find(params[:id])
+    @followings = @general_user.followings.page(params[:page])
   end
 
   def new
@@ -26,7 +29,7 @@ class GeneralUsersController < ApplicationController
   def update
     @general_user = GeneralUser.find(params[:id])
     
-    if @general_user.save
+    if @general_user.update(user_params)
       flash[:success] = "情報を更新しました"
       redirect_to @general_user
     else
@@ -40,6 +43,11 @@ class GeneralUsersController < ApplicationController
     @general_user.destroy
     
     flash[:success] = "アカウントが削除されました"
+  end
+  
+  def followings
+    @general_user = GeneralUser.find(params[:id])
+    @followings = @general_user.followings.page(params[:page])
   end
   
   private

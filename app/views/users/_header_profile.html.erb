@@ -6,23 +6,19 @@
   <% end %>
 </div>
 <div class="header_user_name">
-  <p><%= current_user.name %></p>
+  <p><%= @user.name %></p>
 </div>
 
 <div class="profile">
-  <p><%= current_user.profile %></p>
+  <p><%= user.profile %></p>
 </div>
+
+<%= render "relationships/follow_button", user: @user %>
 
 <div class="setting">
-  <%= link_to "プロフィール編集", edit_user_path(user), class: "btn btn-primary btn-sm" %>
-</div>
-
-<div class="user_link">
-  <ul class="d-flex flex-row justify-content-end list-unstyled">
-    <li class="mr-2 btn btn-primary btn-sm">Follower</li>
-    <li class="mr-2 btn btn-primary btn-sm">Followings</li>
-    <li class="mr-2 btn btn-primary btn-sm">Favorites</li>
-  </ul>
+  <% if current_user %>
+    <%= link_to "プロフィール編集", edit_user_path(user), class: "btn btn-primary btn-sm" %>
+  <% end %>
 </div>
 
 <div class="post_link">

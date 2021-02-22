@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :profile, presence: true,length: { maximum: 255 }
   mount_uploader :image, ImageUploader
   has_many :posts
+  belongs_to :general_user
+  has_many :relationships
 end

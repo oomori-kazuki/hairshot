@@ -24,6 +24,6 @@
     <%= f.submit '新規登録', class: 'btn btn-primary btn-block' %>
   <% else %>
     <%= f.submit '更新', class: 'btn btn-primary btn-block' %>
-    <%= link_to "アカウント削除", general_user_path(general_user), method: :delete, data: { confirm: "削除してよろしいでしょうか？" }, class: "btn btn-danger btn-block" %>
+    <%= link_to "アカウント削除", @general_user, method: :delete, data: { confirm: "削除してよろしいでしょうか？" }, class: "btn btn-danger btn-block" %>
   <% end %>
 <% end %>

@@ -14,7 +14,9 @@
 
 <div class="follow">
   <div class="follow_title">
-    <h3>フォローユーザー</h3>
+    <h3>お気に入りユーザー</h3>
+    <%= render "users/users", users: @followings %>
+    <%= link_to "全て見る", followings_general_user_path(@general_user) %>
   </div>
   <div class="follow_contents">
     

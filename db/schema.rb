@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_124353) do
+ActiveRecord::Schema.define(version: 2021_02_20_040647) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 2021_02_15_124353) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "general_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["general_user_id"], name: "index_relationships_on_general_user_id"
+    t.index ["user_id", "general_user_id"], name: "index_relationships_on_user_id_and_general_user_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -49,4 +59,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_124353) do
 
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "users"
+  add_foreign_key "relationships", "general_users"
+  add_foreign_key "relationships", "users"
 end
