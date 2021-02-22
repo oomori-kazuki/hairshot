@@ -6,6 +6,8 @@
 <div class="likes">
   <div class="likes_title">
     <h3>お気に入りスタイル</h3>
+    <%= render "posts/posts", posts: @likes %>
+    <%= link_to "全て見る", likes_general_user_path(@general_user) %>
   </div>
   <div class="likes_contents">
     

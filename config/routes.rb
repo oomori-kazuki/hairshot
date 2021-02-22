@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'toppages#index'
   
+  resources :favorites, only: [:create, :destroy]
+  
   resources :relationships, only: [:create, :destroy]
   
   get "general/login", to: 'general_sessions#new'
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   resources :general_users, only: [:show, :create, :edit, :update, :destroy] do
     member do
       get :followings
+      get :likes
     end
   end
   

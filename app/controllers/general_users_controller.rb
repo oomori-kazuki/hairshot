@@ -4,6 +4,7 @@ class GeneralUsersController < ApplicationController
   def show
     @general_user = GeneralUser.find(params[:id])
     @followings = @general_user.followings.page(params[:page])
+    @likes = @general_user.favorite_posts.page(params[:page])
   end
 
   def new
@@ -48,6 +49,11 @@ class GeneralUsersController < ApplicationController
   def followings
     @general_user = GeneralUser.find(params[:id])
     @followings = @general_user.followings.page(params[:page])
+  end
+  
+  def likes
+    @general_user = GeneralUser.find(params[:id])
+    @likes = @general_user.favorite_posts.page(params[:page])
   end
   
   private

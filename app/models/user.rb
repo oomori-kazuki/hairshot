@@ -7,7 +7,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :profile, presence: true,length: { maximum: 255 }
   mount_uploader :image, ImageUploader
-  has_many :posts
+  has_many :posts, dependent: :destroy
   belongs_to :general_user
   has_many :relationships
 end
