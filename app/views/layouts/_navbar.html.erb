@@ -17,9 +17,8 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
       <ul class="navbar-nav">
         <% if logged_in? %>
-          <li class="nav-item"><%= link_to 'トップ', root_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "ホーム", posts_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "サロンユーザー", users_path(@users), class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to 'ホーム', root_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "スタイリスト一覧", users_path(@users), class: "nav-link" %></li>
           <% if current_user %>
             <li class="nav-item">
               <%= link_to new_post_path do %>
@@ -29,8 +28,8 @@
             <li class="nav-item"><%= link_to "マイページ", user_path(current_user), class: "nav-link" %></li>
             <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "nav-link" %></li>
           <% else %>
-             <li class="nav-item"><%= link_to "一般ユーザーマイページ", general_user_path(current_general_user), class: "nav-link" %></li>
-             <li class="nav-item"><%= link_to '一般ユーザーログアウト', general_logout_path, method: :delete, class: "nav-link" %></li>
+             <li class="nav-item"><%= link_to "マイページ", general_user_path(current_general_user), class: "nav-link" %></li>
+             <li class="nav-item"><%= link_to 'ログアウト', general_logout_path, method: :delete, class: "nav-link" %></li>
           <% end %>
         <% else %>
           <li class="nav-item"><%= link_to "一般ユーザー新規登録", general_user_signup_path, class: "nav-link" %></li>

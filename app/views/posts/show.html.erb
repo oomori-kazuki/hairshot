@@ -6,7 +6,7 @@
     <%= image_tag @post.image.icon.url %>
   </div>
   <div class="image_content border">
-    <button>お気に入り</button>
+    <%= render "favorites/favorites", post: @post %>
     <%= link_to "編集", edit_post_path(@post), class: "btn btn-primary" %>
     <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: "削除してよろしいですか？" }, class: "btn btn-primary" %>
   </div>

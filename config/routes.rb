@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :posts
+  resources :posts, except: [:index]
   get "mensperms", to: "mensperms#index"
   get "menscolors", to: "menscolors#index"
   get "ladiesperms", to: "ladiesperms#index"
