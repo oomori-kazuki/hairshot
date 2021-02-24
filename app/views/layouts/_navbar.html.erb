@@ -1,4 +1,4 @@
-<header class="mb-4">
+<header class="sticky-top mb-5">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="header_icon">
       <% unless controller.controller_name == 'ToppagesController' %>
@@ -32,9 +32,9 @@
              <li class="nav-item"><%= link_to 'ログアウト', general_logout_path, method: :delete, class: "nav-link" %></li>
           <% end %>
         <% else %>
-          <li class="nav-item"><%= link_to "一般ユーザー新規登録", general_user_signup_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "一般ユーザーログイン", general_login_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "サロンユーザー新規登録", signup_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "新規登録", general_user_signup_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "ログイン", general_login_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "美容師の方はこちら", signup_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to "サロンユーザーログイン", login_path, class: "nav-link" %></li>
         <% end %>
       </ul>

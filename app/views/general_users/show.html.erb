@@ -5,7 +5,7 @@
 
 <div class="likes">
   <div class="likes_title">
-    <h3>お気に入りスタイル</h3>
+    <h3>お気に入りスタイル <span class="badge badge-secondary"><%= @count_favorites %></span></h3>
     <%= render "posts/posts", posts: @likes %>
     <%= link_to "全て見る", likes_general_user_path(@general_user) %>
   </div>
@@ -16,7 +16,7 @@
 
 <div class="follow">
   <div class="follow_title">
-    <h3>お気に入りユーザー</h3>
+    <h3>お気に入りユーザー <span class="badge badge-secondary"><%= @count_followings %></span></h3>
     <%= render "users/users", users: @followings %>
     <%= link_to "全て見る", followings_general_user_path(@general_user) %>
   </div>

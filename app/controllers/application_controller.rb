@@ -12,8 +12,12 @@ class ApplicationController < ActionController::Base
   end
   
   def counts(user)
-    @count_posts = user.posts.count_posts
-    @count_followings = user.followings.count_posts
+    @count_posts = user.posts.count
+  end
+  
+  def general_user_counts(user)
+    @count_followings = user.followings.count
+    @count_favorites = user.favorites.count
   end
   
 end

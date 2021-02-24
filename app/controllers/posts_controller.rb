@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   before_action :require_user_logged_in
   before_action :correct_user,  only: [:destroy]
+  before_action :set_post, only: [:show, :edit, :update]
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def new
@@ -23,12 +23,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
-    
     if @post.update(posts_params)
      flash[:success] = "投稿が更新されました"
      redirect_to @post
@@ -55,5 +52,9 @@ class PostsController < ApplicationController
     unless @post
       redirect_to root_url
     end
+  end
+  
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

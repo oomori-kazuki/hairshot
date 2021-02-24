@@ -17,5 +17,9 @@
       </li>
     <% end %>
   </ul>
-  <%= paginate users %>
+  <div>
+    <% unless controller.controller_name == "general_users" %>
+      <%= paginate users %>
+    <% end %>
+  </div>
 <% end %>

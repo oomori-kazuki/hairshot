@@ -1,10 +1,11 @@
 class GeneralUsersController < ApplicationController
    before_action :require_user_logged_in, only: [:show, :edit, :followings]
+   before_action :set_general_user, only: [:show, :edit, :update, :destroy, :followings, :likes]
   
   def show
-    @general_user = GeneralUser.find(params[:id])
-    @followings = @general_user.followings.page(params[:page])
-    @likes = @general_user.favorite_posts.page(params[:page])
+    @followings = @general_user.followings.page(params[:page]).per(3)
+    @likes = @general_user.favorite_posts.page(params[:page]).per(3)
+    general_user_counts(@general_user)
   end
 
   def new
@@ -24,12 +25,9 @@ class GeneralUsersController < ApplicationController
   end
 
   def edit
-    @general_user = GeneralUser.find(params[:id])
   end
 
   def update
-    @general_user = GeneralUser.find(params[:id])
-    
     if @general_user.update(user_params)
       flash[:success] = "情報を更新しました"
       redirect_to @general_user
@@ -40,19 +38,15 @@ class GeneralUsersController < ApplicationController
   end
 
   def destroy
-    @general_user = GeneralUser.find(params[:id])
     @general_user.destroy
-    
     flash[:success] = "アカウントが削除されました"
   end
   
   def followings
-    @general_user = GeneralUser.find(params[:id])
     @followings = @general_user.followings.page(params[:page])
   end
   
   def likes
-    @general_user = GeneralUser.find(params[:id])
     @likes = @general_user.favorite_posts.page(params[:page])
   end
   
@@ -62,4 +56,7 @@ class GeneralUsersController < ApplicationController
     params.require(:general_user).permit(:name, :email, :password, :password_confirmation)
   end
   
+  def set_general_user
+    @general_user = GeneralUser.find(params[:id])
+  end
 end
