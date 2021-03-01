@@ -63,3 +63,5 @@ gem "kaminari"
 gem "carrierwave", "~> 2.0"
 
 gem 'rmagick', '~> 4.2', '>= 4.2.1'
+
+gem 'rails-i18n'

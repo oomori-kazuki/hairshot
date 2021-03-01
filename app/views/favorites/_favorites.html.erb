@@ -1,15 +1,15 @@
 <% if current_general_user.favoriting?(post) %>
-      <%= form_with(model: current_general_user.favorites.find_by(post_id: post.id), local: true, method: :delete) do |f| %>
-        <%= hidden_field_tag :post_id, post.id %>
-        <%= button_tag type: "submit", class: "btn btn-default" do %>
-          <i class="fas fa-heart"></i>
-        <% end %>
-      <% end %>
-    <% else %>
-      <%= form_with(model: current_general_user.favorites.build(post_id: post.id), local: true) do |f| %>
-        <%= hidden_field_tag :post_id, post.id %>
-        <%= button_tag type: "submit", class: "btn btn-default"  do %>
-          <i class="far fa-heart"></i>
-        <% end %>
-      <% end %>
+  <%= form_with(model: current_general_user.favorites.find_by(post_id: post.id), local: true, method: :delete) do |f| %>
+    <%= hidden_field_tag :post_id, post.id %>
+    <%= button_tag type: "submit", class: "btn btn-default" do %>
+      <i class="fas fa-bookmark"></i>
     <% end %>
+  <% end %>
+<% else %>
+  <%= form_with(model: current_general_user.favorites.build(post_id: post.id), local: true) do |f| %>
+    <%= hidden_field_tag :post_id, post.id %>
+    <%= button_tag type: "submit", class: "btn btn-default"  do %>
+      <i class="far fa-bookmark"></i>
+    <% end %>
+  <% end %>
+<% end %>

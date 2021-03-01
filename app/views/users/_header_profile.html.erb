@@ -1,32 +1,36 @@
-<div class="header_icon">
-  <% if @user.image? %>
-    <%= image_tag @user.image.thumb.url, class: "rounded-circle" %>
-  <% else %>
-    <img class="ml-2 mr-2 rounded" src="/assets/thumb_default.png" alt="デフォルトイメージ">
-  <% end %>
-</div>
-<div class="header_user_name">
-  <p><%= @user.name %></p>
-</div>
-
-<div class="profile">
-  <p><%= user.profile %></p>
-</div>
-
-<%= render "relationships/follow_button", user: @user %>
-
-<div class="setting">
-  <% if current_user %>
-    <%= link_to "プロフィール編集", edit_user_path(user), class: "btn btn-primary btn-sm" %>
-  <% end %>
-</div>
-
-<div class="post_link">
-  <ul class="nav nav-tabs">
-    <li class="category nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= "active" if current_page?(user_path(@user)) %>">All categories <span class="badge badge-secondary"><%= @count_posts %></span></a></li>
-    <li class="category nav-item"><a href="<%= mensperms_user_path(@user) %>" class="nav-link <%= "active" if current_page?(mensperms_user_path(@user)) %>">Men's perm"</a></li>
-    <li class="category nav-item"><a href="<%= menscolors_user_path(@user) %>" class="nav-link <%= "active" if current_page?(menscolors_user_path(@user)) %>">Men's color"</a></li>
-    <li class="category nav-item"><a href="<%= ladiesperms_user_path(@user) %>" class="nav-link <%= "active" if current_page?(ladiesperms_user_path(@user)) %>">Ladies' perm"</a></li>
-    <li class="category nav-item"><a href="<%= ladiescolors_user_path(@user) %>" class="nav-link <%= "active" if current_page?(ladiescolors_user_path(@user)) %>">Ladies' color"</a></li>
-  </ul>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="header_icon">
+      <% if user.image? %>
+        <%= image_tag user.image.thumb.url, class: "rounded-circle" %>
+      <% else %>
+        <img class="ml-2 mr-2 rounded" src="/assets/thumb_default.png" alt="デフォルトイメージ">
+      <% end %>
+    </div>
+    <div class="header_user_name">
+      <p><%= user.name %></p>
+    </div>
+    
+    <div class="profile">
+      <p><%= user.profile %></p>
+    </div>
+    
+    <%= render "relationships/follow_button", user: user %>
+    
+    <div class="setting">
+      <% if current_user == user%>
+        <%= link_to "プロフィール編集", edit_user_path(user), class: "btn btn-primary btn-sm" %>
+      <% end %>
+    </div>
+    
+    <div class="post_link">
+      <ul class="nav nav-tabs">
+        <li class="category nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= "active" if current_page?(user_path(@user)) %>">All categories <span class="badge badge-secondary"><%= @count_posts %></span></a></li>
+        <li class="category nav-item"><a href="<%= mensperms_user_path(@user) %>" class="nav-link <%= "active" if current_page?(mensperms_user_path(@user)) %>">Men's perm</a></li>
+        <li class="category nav-item"><a href="<%= menscolors_user_path(@user) %>" class="nav-link <%= "active" if current_page?(menscolors_user_path(@user)) %>">Men's color</a></li>
+        <li class="category nav-item"><a href="<%= ladiesperms_user_path(@user) %>" class="nav-link <%= "active" if current_page?(ladiesperms_user_path(@user)) %>">Ladies' perm</a></li>
+        <li class="category nav-item"><a href="<%= ladiescolors_user_path(@user) %>" class="nav-link <%= "active" if current_page?(ladiescolors_user_path(@user)) %>">Ladies' color</a></li>
+      </ul>
+    </div>
+  </div>
 </div>

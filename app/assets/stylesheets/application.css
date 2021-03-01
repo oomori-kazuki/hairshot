@@ -1,3 +1,160 @@
+body {
+  font-family: "Shuei KakuGo Gin M",sans-serif;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: #808080;
+  background-color: #EEEEED;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+#wrapper {
+  width: 960px;
+  max-width: 100%;
+  margin: auto;
+  pdding: 0 10px;
+  background-color: #E7EBEC;
+  border: 1px solid;
+  border-color: #A3B1BF;
+  border-radius: 10px
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+  line-height: 1.6;
+  color: #232734;
+}
+
+a {
+  color: #808080;
+  cursor: pointer;
+}
+
+a:visited {
+  color: #333;
+}
+
+a:hover {
+  color: #C0C0C0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
 .pagination {
   justify-content: center;
+}
+
+/*ヘッダー*/
+header {
+  background-color: #E7EBEC;
+}
+
+.navbar {
+  border-bottom: 1px solid;
+  border-bottom-color: #A3B1BF;
+}
+
+.nav_contents {
+  width: 960px;
+  margin: auto;
+  display: flex;
+}
+
+.navbar-brand {
+  font-family: monospace;
+  font-size: 30px;
+}
+
+/*general_user マイページ*/
+.mypage_header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid;
+  border-color: #232734;
+}
+
+.mypage_header a {
+  height: 100%;
+  padding-top: 10px;
+}
+
+.likes ul {
+  text-align: center;
+  display: flex;
+  margin-left: 100px
+}
+
+@media screen and (max-width: 900px) {
+  .likes ul {
+    display: block;
+  }
+}
+
+.likes ul li {
+  margin-right: 50px;
+}
+
+.likes ul li .datetime p {
+  font-size: 5px;
+}
+
+.likes ul li img {
+  height: 200px;
+  width: 200px;
+  object-fit:none;
+}
+
+.likes span {
+  margin-left: 100px;
+}
+
+.likes span a {
+  color: #808080;
+}
+
+.likes p {
+  margin-left: 100px;
+}
+
+.follow_user ul {
+  text-align: center;
+  display: flex;
+  margin-left: 100px
+}
+
+@media screen and (max-width: 900px) {
+  .follow_user ul {
+    display: block;
+  }
+}
+
+.follow_user ul li {
+  margin-right: 50px;
+}
+
+.follow_user ul li img {
+  height: 200px;
+  width: 200px;
+  object-fit:none;
+}
+
+.follow_user span {
+  margin-left: 100px;
+}
+
+.follow_user span a {
+  color: #808080;
+}
+
+.follow_user p {
+  margin-left: 100px;
 }

@@ -1,19 +1,28 @@
 <% if users.any? %>
-  <ul class="list-unstyled ">
+  <ul class="list-unstyled">
     <% users.each do |user| %>
-      <li class="border">
-        <div class="d-sm-inline-block">
+      <li class="user_list border">
+        <div class>
           <% if user.image? %>
-            <%= image_tag user.image.thumb.url, class: "ml-2 mr-2 rounded" %>
+            <% if controller.controller_name == "users" %>
+              <%= image_tag user.image.thumb.url, class: "rounded" %>
+            <% else %>
+              <%= image_tag user.image.icon.url, class: "rounded" %>
+            <% end %>
           <% else %>
-            <img class="ml-2 mr-2 rounded" src="/assets/thumb_default.png" alt="デフォルトイメージ">
+            <% if controller.controller_name == "users" %>
+              <img class="rounded" src="/assets/thumb_default.png" alt="デフォルトイメージ">
+            <% else %>
+              <img class="rounded" src="/assets/default.png" alt="デフォルトイメージ">
+            <% end %>
           <% end %>
         </div>
-        <div class="d-sm-inline-block">
-          <div>
-            <P><%= link_to user.name, user_path(user) %></P>
-          </div>
+        <div>
+          <p class="ml-4 align-middle"><%= link_to user.name, user_path(user) %></p>
         </div>
+          <% if current_general_user %>
+             <%= render "relationships/follow_button", user: user %>
+          <% end %>
       </li>
     <% end %>
   </ul>
