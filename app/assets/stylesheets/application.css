@@ -69,9 +69,15 @@ header {
   display: flex;
 }
 
+.navbar_icon .image {
+  border: double;
+  border-color: #808080;
+}
+
 .navbar-brand {
   font-family: monospace;
   font-size: 30px;
+  margin: 10px 0 0 10px;
 }
 
 /*general_user マイページ*/
@@ -144,7 +150,7 @@ header {
 .follow_user ul li img {
   height: 200px;
   width: 200px;
-  object-fit:none;
+  object-fit: cover;
 }
 
 .follow_user span {
@@ -157,4 +163,41 @@ header {
 
 .follow_user p {
   margin-left: 100px;
+}
+
+/*users　マイページ*/
+
+.header_icon {
+  margin: 20px 0 20px 20px;
+  display: flex;
+}
+
+.header_icon .image {
+  border-style: double;
+  border-color: #808080;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.header_icon .user_name h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.user_profile h1 {
+  font-size: 15px;
+}
+
+.setting .btn {
+  border-color: #A3B1BF;
+}
+
+.post_link ul li a {
+  color: #808080;
+  background-color: #EEF2F5;
+}
+
+.post_link ul li .active {
+  background-color: #A3B1BF !important;
 }

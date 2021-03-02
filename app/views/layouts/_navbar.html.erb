@@ -1,11 +1,11 @@
 <header class="sticky-top mb-5 border-bottom">
   <nav class="navbar navbar-expand-sm navbar-light">
     <div class="nav_contents">
-      <div class="header_icon">
+      <div class="navbar_icon">
         <% unless controller.controller_name == 'ToppagesController' %>
           <% if logged_in? %>
             <% if current_user %>
-              <%= image_tag current_user.image.thumb.url, class: "rounded-circle" %>
+              <%= image_tag current_user.image.thumb.url, class: "image rounded-circle" %>
             <% end %>
           <% end %>
         <% end %>
