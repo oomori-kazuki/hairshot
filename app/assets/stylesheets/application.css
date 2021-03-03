@@ -201,3 +201,45 @@ header {
 .post_link ul li .active {
   background-color: #A3B1BF !important;
 }
+
+/*posts　投稿一覧*/
+.contents {
+  text-align: center;
+}
+
+.content {
+  width: 400px;
+  margin: 20px auto;
+  border: 1px solid;
+  border-color: #A3B1BF;
+  border-radius: 5px
+}
+
+.content_header {
+  display: flex;
+  justify-content: center;
+}
+
+.content_title a {
+  font-size: 20px;
+  color: #808080;
+}
+
+.dropdown .btn {
+  color: #808080;
+  margin-left: 250px;
+}
+
+.datetime p {
+  color: #808080;
+}
+
+.content_header img {
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+}
+
+.content_header img, p {
+  margin-top: 10px;
+}
