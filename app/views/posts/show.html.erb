@@ -1,17 +1,41 @@
-<div class="text-center">
-  <div class="title border mb-3">
+<div class="content text-center">
+  <div class="content_header">
+    <div>
+      <% if @user.image? %>
+        <%= image_tag @user.image.thumb.url, class: "rounded" %>
+      <% else %>
+        <img class="rounded" src="/assets/thumb_default.png" alt="デフォルトイメージ">
+      <% end %>
+      <%= link_to @user.name, user_path(@user) %>
+    </div>
+    <% if current_user && current_user == @user%>
+      <div class="dropdown">
+        <button type="button" class="btn" data-toggle="dropdown">
+          <i class="fas fa-ellipsis-h"></i>
+        </button>
+        <div class="dropdown-menu">
+          <%= link_to "編集", edit_post_path(@post), class: "dropdown-item" %>
+          <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: "削除してよろしいですか？"}, class: "dropdown-item" %>
+          <% if current_general_user %>
+            <%= render "favorites/favorites", post: post %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="title mb-3">
     <h1><%= @post.title %></h1>
   </div>
-  <div class="image border mb-3">
-    <%= image_tag @post.image.icon.url %>
+  <div class="image mb-3">
+    <%= image_tag @post.image.content.url %>
+  </div>
+  <div class="datetime">
+    <p><%= @post.created_at.to_s(:datetime_jp) %></p>
   </div>
   
   <div class="image_content border">
     <% if current_general_user %>
       <%= render "favorites/favorites", post: @post %>
-    <% else %>
-      <%= link_to "編集", edit_post_path(@post), class: "btn btn-secondary" %>
-      <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: "削除してよろしいですか？" }, class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

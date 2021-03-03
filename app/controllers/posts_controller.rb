@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
 
   def show
+    @user = @post.user
   end
 
   def new
@@ -36,9 +37,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @user = @post.user
     @post.destroy
     flash[:success] = "投稿を削除しました"
-    redirect_back(fallback_location: root_path)
+    redirect_to @user
   end
   
   private
