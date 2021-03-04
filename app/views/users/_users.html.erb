@@ -17,7 +17,7 @@
             <% end %>
           <% end %>
         </div>
-        <%= link_to user.name, user_path(user), class: "ml-4" %>
+        <%= link_to user.name, user_path(user) %>
         <% if current_general_user %>
            <%= render "relationships/follow_button", user: user %>
         <% end %>

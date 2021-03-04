@@ -211,12 +211,26 @@ header {
   background-color: #EEF2F5;
 }
 
-.user_list img {
+.users_page .user_list a {
+  margin-left: 20px;
+}
+
+.users_page .user_list img {
   margin-left: 10px;
   height: 50px;
   width: 50px;
   object-fit: cover;
 }
+
+.user_list {
+  padding: auto;
+  border: 1px solid;
+  border-color: #A3B1BF;
+  border-radius: 5px;
+  background-color: #EEF2F5;
+}
+
+
 
 /*posts　投稿*/
 .contents {
