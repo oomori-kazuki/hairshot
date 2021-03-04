@@ -4,14 +4,14 @@
       <li class="content">
         <div class="content_header">
           <div>
-            <% if @user.image? %>
-              <%= image_tag @user.image.thumb.url, class: "rounded" %>
+            <% if post.user.image? %>
+              <%= image_tag post.user.image.thumb.url, class: "rounded" %>
             <% else %>
               <img class="rounded" src="/assets/thumb_default.png" alt="デフォルトイメージ">
             <% end %>
-            <%= link_to @user.name, user_path(@user) %>
+            <%= link_to post.user.name, user_path(post.user) %>
           </div>
-          <% if current_user && current_user == @user%>
+          <% if current_user && current_user == post.user%>
             <div class="dropdown">
               <button type="button" class="btn" data-toggle="dropdown">
                 <i class="fas fa-ellipsis-h"></i>
@@ -19,9 +19,6 @@
               <div class="dropdown-menu">
                 <%= link_to "編集", edit_post_path(post), class: "dropdown-item" %>
                 <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "削除してよろしいですか？"}, class: "dropdown-item" %>
-                <% if current_general_user %>
-                  <%= render "favorites/favorites", post: post %>
-                <% end %>
               </div>
             </div>
           <% end %>
@@ -33,7 +30,10 @@
           <%= image_tag post.image.content.url %>
         </div>
         <div class="datetime">
-          <p><%= post.created_at.to_s(:datetime_jp) %></p>
+          <% if current_general_user %>
+            <%= render "favorites/favorites", post: post %>
+          <% end %>
+         <%= post.created_at.to_s(:datetime_jp) %>
         </div>
       </li>
     <% end %>

@@ -110,7 +110,7 @@ header {
   font-size: 5px;
 }
 
-.likes ul li img {
+.content_image img {
   height: 200px;
   width: 200px;
   object-fit:none;
@@ -199,6 +199,22 @@ header {
   background-color: #A3B1BF !important;
 }
 
+/*users 一覧*/
+.users_page .user_list {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  margin: 20px auto;
+  border: 1px solid;
+  border-color: #A3B1BF;
+  border-radius: 5px;
+  background-color: #EEF2F5;
+}
+
+.user_list img {
+  margin-left: 10px;
+}
+
 /*posts　投稿*/
 .contents {
   text-align: center;
@@ -241,5 +257,4 @@ header {
 .datetime p {
   color: #808080;
 }
-
 

@@ -5,11 +5,10 @@ class GeneralUsersController < ApplicationController
   def show
     @followings = @general_user.followings.page(params[:page]).per(3)
     @likes = @general_user.favorite_posts.page(params[:page]).per(3)
-    general_user_counts(@general_user)
   end
 
   def new
-    @general_user = GeneralUser.new
+    @general_user = @likes.find_by(user_id)
   end
 
   def create

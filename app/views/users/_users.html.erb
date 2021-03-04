@@ -1,7 +1,7 @@
 <% if users.any? %>
   <ul class="list-unstyled">
     <% users.each do |user| %>
-      <li class="user_list border">
+      <li class="user_list">
         <div>
           <% if user.image? %>
             <% if controller.controller_name == "users" %>
@@ -17,12 +17,10 @@
             <% end %>
           <% end %>
         </div>
-        <div>
-          <p class="ml-4 align-middle"><%= link_to user.name, user_path(user) %></p>
-        </div>
-          <% if current_general_user %>
-             <%= render "relationships/follow_button", user: user %>
-          <% end %>
+        <%= link_to user.name, user_path(user), class: "ml-4" %>
+        <% if current_general_user %>
+           <%= render "relationships/follow_button", user: user %>
+        <% end %>
       </li>
     <% end %>
   </ul>
