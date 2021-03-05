@@ -19,11 +19,11 @@
               <i class="fa fa-edit"></i>
             <% end %>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown dropdown-left">
             <a href="#" class="nav-link" data-toggle="dropdown">
               <%= image_tag current_user.image.thumb.url, class: "image rounded-circle" %>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to "マイページ", user_path(current_user), class: "nav-link" %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "nav-link" %></li>

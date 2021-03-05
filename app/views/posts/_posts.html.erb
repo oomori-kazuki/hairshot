@@ -16,10 +16,10 @@
               <button type="button" class="btn" data-toggle="dropdown">
                 <i class="fas fa-ellipsis-h"></i>
               </button>
-              <div class="dropdown-menu">
-                <%= link_to "編集", edit_post_path(post), class: "dropdown-item" %>
-                <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "削除してよろしいですか？"}, class: "dropdown-item" %>
-              </div>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li class="dropdown-item"><%= link_to "編集", edit_post_path(post) %></li>
+                <li class="dropdown-item"><%= link_to "削除", post_path(post), method: :delete, data: { confirm: "削除してよろしいですか？"} %></li>
+              </ul>
             </div>
           <% end %>
         </div>

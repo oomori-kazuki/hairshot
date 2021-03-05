@@ -50,6 +50,10 @@ img {
   justify-content: center;
 }
 
+li {
+  max-width: 100%;
+}
+
 /*ヘッダー*/
 header {
   background-color: #E7EBEC;
@@ -191,9 +195,17 @@ header {
   border-color: #A3B1BF;
 }
 
+.post_link ul {
+  width: 960px;
+  max-width: 100%;
+}
+
+.post_link ul li {
+  width: 20%;
+}
+
 .post_link ul li a {
   color: #808080;
-  background-color: #EEF2F5;
 }
 
 .post_link ul li .active {
