@@ -1,45 +1,53 @@
-<header class="sticky-top mb-5 border-bottom">
-  <nav class="navbar navbar-expand-sm navbar-light">
-    <div class="nav_contents">
-      <div class="navbar_icon">
-        <% unless controller.controller_name == 'ToppagesController' %>
-          <% if logged_in? %>
-            <% if current_user %>
+<header class="sticky-top mb-5">
+  <nav class="navbar navbar-expand navbar-light">
+    <a class="navbar-brand" href="/">hairshot</a>
+    <ul class="navbar-nav">
+      <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to root_path, class: "nav-link" do %>
+            <i class="fas fa-home"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to users_path(@users), class: "nav-link" do %>
+            <i class="fas fa-users"></i>
+          <% end %>
+        </li>
+        <% if current_user %>
+          <li class="nav-item">
+            <%= link_to new_post_path, class: "nav-link" do %>
+              <i class="fa fa-edit"></i>
+            <% end %>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link" data-toggle="dropdown">
               <%= image_tag current_user.image.thumb.url, class: "image rounded-circle" %>
-            <% end %>
-          <% end %>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><%= link_to "マイページ", user_path(current_user), class: "nav-link" %></li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "nav-link" %></li>
+            </ul>
+          </li>
+        <% else %>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown">
+                <i class="fas fa-user-circle"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item"><%= link_to "マイページ", general_user_path(current_general_user), class: "nav-link" %></li>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-item"><%= link_to "ログアウト", general_logout_path, method: :delete, class: "nav-link" %></li>
+              </ul>
+            </li>
         <% end %>
-      </div>
-      <a class="navbar-brand " href="/">hairshot</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-        <ul class="navbar-nav">
-          <% if logged_in? %>
-            <li class="nav-item"><%= link_to 'ホーム', root_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "スタイリスト一覧", users_path(@users), class: "nav-link" %></li>
-            <% if current_user %>
-              <li class="nav-item">
-                <%= link_to new_post_path do %>
-                  <i class="fa fa-edit"></i>
-                <% end %>
-              </li>
-              <li class="nav-item"><%= link_to "マイページ", user_path(current_user), class: "nav-link" %></li>
-              <li class="nav-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "nav-link" %></li>
-            <% else %>
-               <li class="nav-item"><%= link_to "マイページ", general_user_path(current_general_user), class: "nav-link" %></li>
-               <li class="nav-item"><%= link_to 'ログアウト', general_logout_path, method: :delete, class: "nav-link" %></li>
-            <% end %>
-          <% else %>
-            <li class="nav-item"><%= link_to "新規登録", general_user_signup_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "ログイン", general_login_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "美容師の方はこちら", signup_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "サロンユーザーログイン", login_path, class: "nav-link" %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
+      <% else %>
+        <li class="nav-item"><%= link_to "新規登録", general_user_signup_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "ログイン", general_login_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "美容師の方はこちら", signup_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "サロンユーザーログイン", login_path, class: "nav-link" %></li>
+      <% end %>
+    </ul>
   </nav>
 </header>
+

@@ -53,20 +53,21 @@ img {
 /*ヘッダー*/
 header {
   background-color: #E7EBEC;
+  border-bottom: 1px solid;
+  border-color: #A3B1BF;
 }
 
 .navbar {
-  border-bottom: 1px solid;
-  border-bottom-color: #A3B1BF;
-}
-
-.nav_contents {
   width: 960px;
+  max-width: 100%;
   margin: auto;
-  display: flex;
+  justify-content: space-between;
 }
 
-.navbar_icon .image {
+.nav-link .image {
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
   border: double;
   border-color: #808080;
 }
@@ -230,8 +231,6 @@ header {
   background-color: #EEF2F5;
 }
 
-
-
 /*posts　投稿*/
 .contents {
   text-align: center;
@@ -275,3 +274,4 @@ header {
   color: #808080;
 }
 
+/*トップページ*/
