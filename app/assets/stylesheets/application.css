@@ -77,9 +77,9 @@ header {
 }
 
 .navbar-brand {
-  font-family: monospace;
+  font-family: "Gill Sans", sans-serif;
   font-size: 30px;
-  margin: 10px 0 0 10px;
+  font-style: italic;
 }
 
 /*general_user マイページ*/
