@@ -288,20 +288,21 @@ header {
 
 /*トップページ*/
 .categories {
-  width: 960px;
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
   font-size: 20px;
   font-weight: 700;
+  margin-top: 200px;
 }
 
 .panel {
   height: 200px;
   width: 200px;
+  margin: 10px;
   background-color: #CDD8E4;
+  border: 1px solid;
+  border-color: #2C5083;
   position: relative;
-  text-align: center;
 }
 
 .category1 {
@@ -355,4 +356,3 @@ header {
   bottom: 30px;
   left: 20px;
 }
-
