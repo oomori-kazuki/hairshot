@@ -28,7 +28,7 @@ p {
 }
 
 a {
-  color: #808080;
+  color: #808080 !important;
   cursor: pointer;
 }
 
@@ -372,6 +372,13 @@ header {
   box-shadow:0px 2px #555;  
   font-weight: bold;
   border: solid 1px #808080;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #C0C0C0;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .button:active {
@@ -384,8 +391,14 @@ header {
   outline: none;
 }
 
-/*users 新規登録*/
+/*新規登録*/
 .signup h1{
+  font-size: 28px;
+  text-align: left;
+}
+
+/*マイページ編集*/
+.edit h1{
   font-size: 28px;
   text-align: left;
 }
