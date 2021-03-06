@@ -356,3 +356,30 @@ header {
   bottom: 30px;
   left: 20px;
 }
+
+/*ログイン*/
+.login_header h1 {
+  font-size: 28px;
+  text-align: left;
+}
+
+.button {
+  display: inline-block;
+  padding: 5px;
+  color: #808080;
+  background: #EEF2F5;
+  border-radius: 4px;
+  box-shadow:0px 2px #555;  
+  font-weight: bold;
+  border: solid 1px #808080;
+}
+
+.button:active {
+  box-shadow: none;
+  position: relative;
+  top: 2px;
+}
+
+.button:focus {
+  outline: none;
+}
