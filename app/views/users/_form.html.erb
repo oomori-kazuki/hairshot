@@ -15,6 +15,11 @@
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache %>
       </div>
+      
+      <div class="form-group">
+        <%= f.label :profile, 'Profile' %>
+        <%= f.text_area :profile, class: 'form-control' %>
+      </div>
 
       <div class="form-group">
         <%= f.label :password, 'Password' %>
@@ -26,15 +31,10 @@
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
       
-      <div class="form-group">
-        <%= f.label :profile, 'Profile' %>
-        <%= f.text_area :profile, class: 'form-control' %>
-      </div>
-      
       <% if action_name == "new" %>
-        <%= f.submit '新規登録', class: 'btn btn-primary btn-block' %>
+        <%= f.submit '新規登録', class: 'button' %>
       <% else %>
-        <%= f.submit '更新', class: 'btn btn-primary btn-block' %>
+        <%= f.submit '更新', class: 'button' %>
         <%= link_to "アカウント削除", user_path(user), method: :delete, data: { confirm: "削除してよろしいでしょうか？" }, class: "btn btn-danger btn-block" %>
       <% end %>
     <% end %>

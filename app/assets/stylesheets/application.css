@@ -383,3 +383,9 @@ header {
 .button:focus {
   outline: none;
 }
+
+/*users 新規登録*/
+.signup h1{
+  font-size: 28px;
+  text-align: left;
+}
