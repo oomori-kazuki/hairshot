@@ -8,7 +8,7 @@ class GeneralUsersController < ApplicationController
   end
 
   def new
-    @general_user = @likes.find_by(user_id)
+    @general_user = GeneralUser.new
   end
 
   def create
