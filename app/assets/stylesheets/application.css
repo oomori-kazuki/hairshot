@@ -11,10 +11,9 @@ body {
 
 #wrapper {
   width: 960px;
-  height: 100%;
   max-width: 100%;
-  margin: auto;
-  pdding: 0 10px;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -57,15 +56,20 @@ li {
 /*ヘッダー*/
 header {
   background-color: #E7EBEC;
-  border-bottom: 1px solid;
-  border-color: #A3B1BF;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 .navbar {
-  width: 960px;
+  width: 888px;
   max-width: 100%;
-  margin: auto;
+  height: 100%;
+  margin: 0 auto;
   justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: #A3B1BF;
+  /*padding-left: 10px;*/
 }
 
 .nav-link .image {
@@ -95,75 +99,67 @@ header {
   padding-top: 10px;
 }
 
-.likes ul {
-  text-align: center;
-  display: flex;
-  margin-left: 100px
-}
 
-@media screen and (max-width: 900px) {
-  .likes ul {
-    display: block;
-  }
+.likes ul {
+  display: flex;
+  margin-left: 100px;
 }
 
 .likes ul li {
-  margin-right: 50px;
+  width: 210px;
+  margin: 0 15px 0 0;
 }
 
-.likes ul li .datetime p {
-  font-size: 5px;
+.likes .content_header {
+  margin-bottom: 5px;
 }
 
-.content_image img {
-  height: 200px;
+.likes .content_title a {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.likes .content_image img {
+  height: 150px;
   width: 200px;
-  object-fit:none;
+  object-fit: contain;
+}
+
+.likes_button {
+  display: inline-block;
+}
+
+.likes ul li .datetime {
+  font-size: 5px;
+  display: inline-block;
 }
 
 .likes span {
   margin-left: 100px;
 }
 
-.likes span a {
-  color: #808080;
-}
-
-.likes p {
-  margin-left: 100px;
-}
-
 .follow_user ul {
-  text-align: center;
   display: flex;
-  margin-left: 100px
-}
-
-@media screen and (max-width: 900px) {
-  .follow_user ul {
-    display: block;
-  }
+  margin-left: 100px;
+  text-align: center;
 }
 
 .follow_user ul li {
-  margin-right: 50px;
+  width: 210px;
+  margin: 0 15px 0 0;
 }
 
-.follow_user ul li img {
-  height: 200px;
+.follow_user img {
+  height: 150px;
   width: 200px;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+.follow_button {
+  display: inline-block;
 }
 
 .follow_user span {
-  margin-left: 100px;
-}
-
-.follow_user span a {
-  color: #808080;
-}
-
-.follow_user p {
   margin-left: 100px;
 }
 
@@ -274,8 +270,19 @@ header {
 }
 
 .content_title a {
+  display: inline-block;
+  margin-bottom: 10px;
   font-size: 20px;
   color: #808080;
+}
+
+.datetime {
+  margin-top: 10px;
+}
+
+.content_image img {
+ width: 500px;
+ object-fit: cover;
 }
 
 .dropdown .btn {
@@ -288,11 +295,12 @@ header {
 
 /*トップページ*/
 .categories {
+  height: 400px;
+  margin-top: 200px;
   display: flex;
   justify-content: space-between;
   font-size: 20px;
   font-weight: 700;
-  margin-top: 200px;
 }
 
 .panel {

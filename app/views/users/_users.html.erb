@@ -18,9 +18,11 @@
           <% end %>
         </div>
         <%= link_to user.name, user_path(user) %>
-        <% if current_general_user %>
-           <%= render "relationships/follow_button", user: user %>
-        <% end %>
+        <div class="follow_button">
+          <% if current_general_user %>
+             <%= render "relationships/follow_button", user: user %>
+          <% end %>
+        </div>
       </li>
     <% end %>
   </ul>

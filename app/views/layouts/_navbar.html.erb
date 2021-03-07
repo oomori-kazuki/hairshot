@@ -19,7 +19,7 @@
               <i class="fa fa-edit fa-lg"></i>
             <% end %>
           </li>
-          <li class="nav-item dropdown dropdown-left">
+          <li class="nav-item dropdown">
             <a href="#" class="nav-link" data-toggle="dropdown">
               <%= image_tag current_user.image.thumb.url, class: "image rounded-circle" %>
             </a>
@@ -34,7 +34,7 @@
               <a href="#" class="nav-link" data-toggle="dropdown">
                 <i class="fas fa-user-circle fa-lg"></i>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-menu-right">
                 <li class="dropdown-item"><%= link_to "マイページ", general_user_path(current_general_user), class: "nav-link" %></li>
                 <li class="dropdown-divider"></li>
                 <li class="dropdown-item"><%= link_to "ログアウト", general_logout_path, method: :delete, class: "nav-link" %></li>
