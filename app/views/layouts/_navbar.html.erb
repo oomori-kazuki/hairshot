@@ -46,6 +46,11 @@
             </li>
         <% end %>
       <% else %>
+        <li class="nav-item">
+          <%= link_to root_path, class: "nav-link" do %>
+            <i class="fas fa-home fa-lg"></i>
+          <% end %>
+        </li>
         <li class="nav-item"><%= link_to "新規登録", general_user_signup_path, class: "nav-link" %></li>
         <li class="nav-item mr-3"><%= link_to "ログイン", general_login_path, class: "nav-link" %></li>
         <li class="nav-item"><%= link_to "サロン新規登録", signup_path, class: "nav-link" %></li>

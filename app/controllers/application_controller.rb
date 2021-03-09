@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
   include GeneralSessionsHelper
- 
   
   private
   
@@ -11,13 +10,12 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  def counts(user)
-    @count_posts = user.posts.count
-  end
   
   def general_user_counts(user)
     @count_followings = user.followings.count
     @count_favorites = user.favorites.count
   end
+  
+  
   
 end

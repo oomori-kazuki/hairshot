@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts.order(id: :desc).page(params[:page]).per(5)
-    counts(@user)
   end
 
   def new

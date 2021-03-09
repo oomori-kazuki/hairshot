@@ -1,0 +1,5 @@
+<% if @posts.any? %>
+  <%= render "posts/posts", posts: @posts %>
+<% else %>
+  <p>投稿はありません</p>
+<% end %>

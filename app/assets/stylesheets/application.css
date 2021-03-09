@@ -289,16 +289,20 @@ header {
   color: #808080;
 }
 
-.datetime p {
+.datetime {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.no_posts p {
+  text-align: center;
+  font-size: 20px;
   color: #808080;
 }
 
-/*.form-group {*/
-/*  width: 500px;*/
-/*  margin: 20px auto;*/
-/*}*/
-
-
+.likes_button {
+  display: inline-block;
+}
 
 #img_prev {
   width: 500px;
@@ -308,7 +312,7 @@ header {
 /*トップページ*/
 .categories {
   height: 400px;
-  margin-top: 200px;
+  margin-top: 100px;
   display: flex;
   justify-content: space-between;
   font-size: 20px;

@@ -35,6 +35,9 @@
         <div class="likes_button">
           <% if current_general_user %>
             <%= render "favorites/favorites", post: post %>
+          <% else %>
+            <i class="fas fa-bookmark"></i>
+            <%= post.favorites.count %>
           <% end %>
         </div>
       </li>
@@ -44,5 +47,9 @@
     <% if controller.controller_name == "users" %>
       <%= paginate posts %> 
     <% end %>
+  </div>
+<% else %>
+  <div class="no_posts">
+    <p>投稿はありません</p>
   </div>
 <% end %>
