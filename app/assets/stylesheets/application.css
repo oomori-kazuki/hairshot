@@ -293,6 +293,18 @@ header {
   color: #808080;
 }
 
+/*.form-group {*/
+/*  width: 500px;*/
+/*  margin: 20px auto;*/
+/*}*/
+
+
+
+#img_prev {
+  width: 500px;
+  object-fit: cover;
+}
+
 /*トップページ*/
 .categories {
   height: 400px;

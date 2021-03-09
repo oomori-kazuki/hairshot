@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(posts_params)
+    @post.user_id = current_user.id
     if @post.save
       flash[:success] = "投稿が完了しました"
       redirect_to @post

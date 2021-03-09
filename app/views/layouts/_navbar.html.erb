@@ -21,7 +21,11 @@
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link" data-toggle="dropdown">
-              <%= image_tag current_user.image.thumb.url, class: "image rounded-circle" %>
+              <% if current_user.image? %>
+                <%= image_tag current_user.image.thumb.url, class: "image rounded-circle" %>
+              <% else %>
+                <img class="image ml-2 mr-2 rounded" src="/assets/thumb_default.png" alt="デフォルトイメージ">
+              <% end %>
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to "マイページ", user_path(current_user), class: "nav-link" %></li>
