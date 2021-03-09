@@ -16,7 +16,7 @@ class GeneralUsersController < ApplicationController
     
     if @general_user.save
       flash[:success] = "ユーザーを登録しました"
-      redirect_to @general_user
+      redirect_to general_login_url
     else
       flash.now[:danger] = "ユーザーの登録に失敗しました"
       render :new

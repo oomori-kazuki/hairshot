@@ -13,7 +13,7 @@
       
       <div class="form-group">
         <% if @post.image.content.url.present? %>
-          <%= image_tag @post.image.content.url, id: :img_prev %>
+          <%= image_tag @post.image.content.url,alt: "", oneerror: "this.onerror = null; this.src="";", id: :img_prev %>
         <% else %>
           <p>プレビューなし</p>
         <% end %>
