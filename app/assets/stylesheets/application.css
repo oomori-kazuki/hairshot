@@ -309,6 +309,19 @@ header {
   object-fit: cover;
 }
 
+#post_img {
+  display: none;
+}
+
+#img_field {
+  border: solid 1px #A3B1BF;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+
 /*トップページ*/
 .categories {
   height: 400px;

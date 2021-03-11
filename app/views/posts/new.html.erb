@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-6 offset-sm-3">
+  <div class="col-sm-7 offset-sm-3">
     <%= form_with(model: @post, local: true) do |f| %>
       <div class="form-group">
         <%= f.label :title, "タイトル" %>
@@ -12,11 +12,9 @@
       </div>
       
       <div class="form-group">
-        <% if @post.image.content.url.present? %>
+        <div id="img_field" onClick="$('#post_img').click()">
           <%= image_tag @post.image.content.url,alt: "", oneerror: "this.onerror = null; this.src="";", id: :img_prev %>
-        <% else %>
-          <p>プレビューなし</p>
-        <% end %>
+        </div>
       </div>
       
       <script type="text/javascript">
