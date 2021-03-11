@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: nicode
+  pool: 5
   database: hairshot_production
   username: hairshot
   password: <%= ENV['HAIRSHOT_DATABASE_PASSWORD'] %>
