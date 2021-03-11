@@ -1,0 +1,16 @@
+current directory: /home/ubuntu/environment/hairshot/vendor/bundle/ruby/2.5.0/gems/racc-1.5.2/ext/racc/cparse
+/home/ubuntu/.rvm/rubies/ruby-2.5.3/bin/ruby -r ./siteconf20210311-11943-1pwfxvf.rb extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /home/ubuntu/environment/hairshot/vendor/bundle/ruby/2.5.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /home/ubuntu/environment/hairshot/vendor/bundle/ruby/2.5.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/ubuntu/environment/hairshot/vendor/bundle/ruby/2.5.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -m 0755 cparse.so ./.gem.20210311-11943-1rxdj3p/racc

@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# ruby '2.5.3'
-ruby "3.0.0"
+ruby '2.5.3'
+# ruby "3.0.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
-# Use Puma as the app server
+# gem 'mysql2', '~> 0.5.3'
+# # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -67,6 +68,6 @@ gem 'rmagick', '~> 4.2', '>= 4.2.1'
 
 gem 'rails-i18n'
 
-group :production do
-  gem "pg", ">= 0.18", "< 2.0"
-end
+# group :production do
+#   gem "pg", ">= 0.18", "< 2.0"
+# end
