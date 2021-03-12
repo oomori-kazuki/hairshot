@@ -1,5 +1,5 @@
 <div class="mypage_header pt-5 px-3 mb-5 mx-3">
-  <h2>マイページ</h2>
+  <h2><%= @general_user.name %>のマイページ</h2>
   <%= link_to edit_general_user_path(@general_user) do %>
     <i class="fas fa-cog"></i>
     <span>設定</span>
