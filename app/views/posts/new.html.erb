@@ -33,14 +33,15 @@
           });
         });
       </script>
-    
-      
+
       <div class="form-group">
         <%= f.label :category_id, "カテゴリー" %>
         <%= f.select :category_id, { "Men's perm": 1, "Men's color": 2, "Ladies' perm": 3, "Ladies' color": 4}, { include_blank: "選択してください" }, { class: "form-control", require: true } %>
       </div>
       
-      <%= f.submit "投稿", class: "button" %>
+      <div class="form-group button">
+        <%= f.submit "投稿" %>
+      </div>
     <% end %>
   </div>
 </div>
