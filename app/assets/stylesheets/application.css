@@ -309,19 +309,6 @@ header {
   object-fit: cover;
 }
 
-#post_img {
-  display: none;
-}
-
-#img_field {
-  border: solid 1px #232734;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 500px;
-  height: 500px;
-  object-fit: cover;
-}
-
 /*トップページ*/
 .categories {
   height: 400px;
@@ -439,10 +426,6 @@ header {
   padding: 0;
   outline: none;
 }
-
-/*.button input:hover {*/
-/*  border: none;*/
-/*}*/
 
 /*新規登録*/
 .signup h1{
