@@ -1,26 +1,5 @@
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
-    <%= form_with(model: @post, local: true) do |f| %>
-      <%= render "layouts/error_messages", model: f.object %>
-      <div class="form-group">
-        <%= f.label :title, "タイトル" %>
-        <%= f.text_field :title, class: "form-control" %>
-      </div>
-      
-      <div class="form-group">
-        <%= f.label :image, "画像" %>
-        <%= f.file_field :image %>
-        <%= f.hidden_field :image_cache %>
-      </div>
-      
-      <div class="form-group">
-        <%= f.label :category_id, "カテゴリー" %>
-        <%= f.select :category_id, { "Men's perm": 1, "Men's color": 2, "Ladies' perm": 3, "Ladies' color": 4}, { include_blank: "選択してください" }, { class: "form-control", require: true } %>
-      </div>
-      
-      <div class="form-group button">
-        <%= f.submit "更新" %>
-      </div>
-    <% end %>
+    <%= render "posts/form", post: @post %>
   </div>
 </div>
