@@ -1,0 +1,32 @@
+current directory: /home/ubuntu/environment/hairshot/vendor/bundle/ruby/2.5.0/gems/ovirt-engine-sdk-4.4.1/ext/ovirtsdk4c
+/home/ubuntu/.rvm/rubies/ruby-2.5.3/bin/ruby -r ./siteconf20210315-32607-7flg63.rb extconf.rb
+checking for xml2-config... yes
+checking for curl-config... no
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/home/ubuntu/.rvm/rubies/ruby-2.5.3/bin/$(RUBY_BASE_NAME)
+	--with-libcurl-config
+	--without-libcurl-config
+	--with-pkg-config
+	--without-pkg-config
+extconf.rb:40:in `<main>': The "libcurl" package isn't available. (RuntimeError)
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/ubuntu/environment/hairshot/vendor/bundle/ruby/2.5.0/extensions/x86_64-linux/2.5.0/ovirt-engine-sdk-4.4.1/mkmf.log
+
+extconf failed, exit code 1

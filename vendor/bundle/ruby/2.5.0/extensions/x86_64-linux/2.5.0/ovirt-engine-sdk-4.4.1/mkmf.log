@@ -1,0 +1,10 @@
+find_executable: checking for xml2-config... -------------------- yes
+
+--------------------
+
+find_executable: checking for curl-config... -------------------- no
+
+--------------------
+
+"pkg-config --exists libcurl"
+package configuration for libcurl is not found

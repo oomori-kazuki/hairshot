@@ -73,3 +73,4 @@ group :production do
 end
 
 gem 'fog-aws'
+# gem 'fog',  '1.42'

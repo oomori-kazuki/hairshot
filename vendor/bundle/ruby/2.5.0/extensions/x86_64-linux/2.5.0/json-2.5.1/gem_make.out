@@ -1,0 +1,13 @@
+current directory: /home/ubuntu/environment/hairshot/vendor/bundle/ruby/2.5.0/gems/json-2.5.1/ext/json
+/home/ubuntu/.rvm/rubies/ruby-2.5.3/bin/ruby -r ./siteconf20210315-32607-naixd2.rb extconf.rb
+creating Makefile
+
+current directory: /home/ubuntu/environment/hairshot/vendor/bundle/ruby/2.5.0/gems/json-2.5.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/ubuntu/environment/hairshot/vendor/bundle/ruby/2.5.0/gems/json-2.5.1/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/ubuntu/environment/hairshot/vendor/bundle/ruby/2.5.0/gems/json-2.5.1/ext/json
+make "DESTDIR=" install
