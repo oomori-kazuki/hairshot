@@ -304,8 +304,13 @@ header {
   display: inline-block;
 }
 
-#img_prev {
+.new_post #img_prev {
   width: 500px;
+  object-fit: cover;
+}
+
+.new_user #img_prev {
+  width: 300px;
   object-fit: cover;
 }
 
