@@ -11,7 +11,7 @@ if Rails.env.production?
       provider: 'AWS',
       aws_access_key_id: Rails.application.credentials.aws[:AKIAQACFOZZR77JYN36N],
       aws_secret_access_key: Rails.application.credentials.aws[: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],
-      region: 'ap-northeast-1'
+      region: 'ap-northeast-1' 
     }
     
     config.fog_directory = 'rails-avatar1'
