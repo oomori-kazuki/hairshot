@@ -34,16 +34,16 @@ URL : https://hairshot.herokuapp.com/
 
 ## 開発環境
 - OS：Linux(ubuntu)
-- フロントエンド
-  ・Bootstrap 4.2.１
+- フロントエンド<br>
+  ・Bootstrap 4.2.１<br>
   ・jQuery
-- バックエンド
-  ・Ruby 2.5.3
+- バックエンド<br>
+  ・Ruby 2.5.3<br>
   ・Rails 5.2.4.4
 - 開発環境
 　・MySQL
 - 本番環境
-　・Heroku
-　・AWS（S３）
+　・Heroku<br>
+　・AWS（S３）<br>
 　・PostgreSQL
 - IDE：Cloud9
